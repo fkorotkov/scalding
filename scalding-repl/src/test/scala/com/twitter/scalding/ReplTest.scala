@@ -199,7 +199,7 @@ class ReplTest extends WordSpec {
     currentDirectory.mkdir()
 
     "enumerate matching files" in {
-      root.setReadable(true)
+      assert(root.setReadable(true))
 
       val actual = ScaldingILoop
         .findAllUpPath(currentDirectory.getAbsolutePath)("this_matches")
@@ -207,7 +207,7 @@ class ReplTest extends WordSpec {
     }
 
     "ignore directories with restricted permissions" in {
-      root.setReadable(false)
+      assert(root.setReadable(false))
 
       val actual = ScaldingILoop
         .findAllUpPath(currentDirectory.getAbsolutePath)("this_matches")
