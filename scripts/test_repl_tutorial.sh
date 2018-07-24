@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set -e # first error should stop execution of this script
 
 # Identify the bin dir in the distribution, and source the common include script
